@@ -8,11 +8,10 @@ class Knight():
         return 'N'
 
     def can_move(self, h, v):
-
+        pass
 
     def move_to(self):
         pass
 
     def draw_board(self):
         pass
-
