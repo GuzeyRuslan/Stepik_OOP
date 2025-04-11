@@ -1,13 +1,15 @@
-def remember_args():
-    out_list = []
-    def inner(*args):
-        out_list.append(args)
-        return out_list
-    return inner
+import functools
 
+def make_capitalize(func):
+    @functools.wraps
+    def wrapper():
+        return func().capitalize()
+    return wrapper
 
+@make_capitalize
+def beegeek():
+    '''documentation'''
+    return 'beegeek'
 
-save = remember_args()
-save(1, 2, 3)
-save("a", "b")
-print(save(4, 6, 8))  # [(1, 2, 3), ('a', 'b')]
+print(beegeek.__name__)
+print(beegeek.__doc__)
