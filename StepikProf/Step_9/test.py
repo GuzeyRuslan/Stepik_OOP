@@ -1,15 +1,3 @@
-import functools
+numbers = {1, 2, 3, 4, 5}
 
-def make_capitalize(func):
-    @functools.wraps
-    def wrapper():
-        return func().capitalize()
-    return wrapper
-
-@make_capitalize
-def beegeek():
-    '''documentation'''
-    return 'beegeek'
-
-print(beegeek.__name__)
-print(beegeek.__doc__)
+print(*reversed(numbers))
